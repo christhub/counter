@@ -4,23 +4,21 @@ var countTo = function(multiple, total) {
   for(var i =multiple; i <=total; i +=multiple){
     daBank.push(i);
   }
-   var new_daBank = daBank.join(',');
-   alert(daBank);
-   return new_daBank;
+
+   return daBank;
 };
 
 $(document).ready(function() {
-  $("form#numberCounter").submit(function(event){
-    var multiple = $("input#multiple").val();
-    var numberTo = $("input#count2").val();
-    //
-    // var result = countTo(multiple, numberTo);
-    var result = "foo";
+  $("form#numberCounter-form").submit(function(event){
+    var multiple = parseInt($("input#multiple").val());
+    var numberTo = parseInt($("input#count2").val());
+
+    var result = countTo(multiple, numberTo);
 
 
 
 
-    $("#numberCounter").text(result);
+    $("#numberCounter-answer").text(result);
 
     $("#result").show();
 
